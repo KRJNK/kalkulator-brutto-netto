@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator brutto–netto 2026 — umowa o pracę</title>
+<meta name="description" content="Ile zostaje z pensji brutto na umowie o pracę? Policz netto po składkach ZUS, zdrowotnej i PIT. Parametry edytowalne, wszystko lokalnie.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <!-- TODO: link do portfolio, gdy powstanie -->
+  <h1>Brutto → netto (umowa o pracę)</h1>
+  <p>Ile naprawdę dostaniesz „na rękę”? Wynik orientacyjny — parametry możesz poprawić poniżej.</p>
+  <section class="card">
+    <label>Brutto miesięcznie (zł) <input id="brutto" type="number" min="0" step="any" value="8000"></label>
+    <details><summary>Parametry (2026, edytowalne)</summary>
+      <label>Emerytalna % <input id="p-em" type="number" step="any" value="9.76"></label>
+      <label>Rentowa % <input id="p-re" type="number" step="any" value="1.5"></label>
+      <label>Chorobowa % <input id="p-ch" type="number" step="any" value="2.45"></label>
+      <label>Zdrowotna % <input id="p-zd" type="number" step="any" value="9"></label>
+      <label>KUP (zł) <input id="p-kup" type="number" step="any" value="250"></label>
+      <label>Kwota zmniejszająca PIT/mies. (zł) <input id="p-pit" type="number" step="any" value="300"></label>
+    </details>
+  </section>
+  <section class="card">
+    <h2>Wynik</h2>
+    <div id="out" class="big">—</div>
+    <p id="detail" class="hint"></p>
+  </section>
+  <section class="card">
+    <h2>Jak to działa</h2>
+    <p>Od pensji brutto odejmujemy najpierw składki ZUS pracownika (emerytalną, rentową i chorobową), potem 9% składki zdrowotnej liczonej od podstawy po ZUS, a na końcu zaliczkę na PIT (12% do progu 120&nbsp;000 zł rocznie, 32% powyżej) pomniejszoną o kwotę wolną. Kalkulator liczy wariant podstawowy: umowa o pracę, pełne składki, standardowe koszty uzyskania przychodu.</p>
+    <p><strong>Przykład:</strong> przy 8000 zł brutto składki ZUS to ok. 1097 zł, zdrowotna ok. 621 zł, zaliczka PIT ok. 538 zł — na rękę zostaje ok. 5744 zł. Dokładną kwotę potwierdzi pasek płacowy, bo ulgi i PPK zmieniają wynik.</p>
+  </section>
+  <div id="ads-slot" hidden></div>
+  <footer><a href="privacy.html">Prywatność</a> · <a href="kontakt.html">Kontakt</a></footer>
+</main>
+<script src="app.js"></script>
+<script src="ads.js"></script>
+</body>
+</html>
